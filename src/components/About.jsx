@@ -39,7 +39,7 @@ export default function About({ onClose }) {
       <button className="about__close" onClick={handleClose} aria-label="Close">×</button>
       <div className="about__body">
         {SECTIONS.map((s, i) => (
-          <p key={i} className="about__p"><strong>{s.heading} — </strong>{s.body}</p>
+          <p key={i} className="about__p"><strong>{s.heading} - </strong>{s.body}</p>
         ))}
       </div>
       <button className="about__close-btn" onClick={handleClose}>CLOSE</button>
