@@ -1,0 +1,31 @@
+:root {
+  --purple: #1e1030;
+  --purple-mid: #2e1a48;
+  --coral: #f07060;
+  --coral-light: #f59282;
+  --coral-dark: #d95a48;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: var(--purple);
+}
+
+body {
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

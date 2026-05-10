@@ -1,0 +1,17 @@
+.text-logo {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
+  letter-spacing: 1.75px;
+  color: var(--coral);
+}
+
+.text-logo_slumber {
+  letter-spacing: 2px;
+}
+
+.text-logo_icon {
+  padding: 0 0.09em 0 0.2em;
+  font-size: 1.4rem;
+  vertical-align: middle;
+}

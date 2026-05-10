@@ -1,0 +1,148 @@
+/* ─── Layout ──────────────────────────────────────────────────────── */
+
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 3rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Dark panel ──────────────────────────────────────────────────── */
+
+.panel--dark {
+  background: linear-gradient(155deg, var(--purple-mid) 0%, var(--purple) 100%);
+  color: var(--coral);
+}
+
+/* ─── Light panel ─────────────────────────────────────────────────── */
+
+.panel--light {
+  background: linear-gradient(
+    155deg,
+    var(--coral-light) 0%,
+    var(--coral-dark) 100%
+  );
+  color: var(--purple);
+  justify-content: center;
+}
+
+/* ─── Burger ──────────────────────────────────────────────────────── */
+
+.burger {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.75rem;
+  z-index: 150;
+  background: none;
+  border: none;
+  color: var(--coral);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  line-height: 1;
+}
+@media screen and (min-width: 680px) {
+  .burger {
+    color: var(--purple);
+  }
+}
+
+/* ─── Panel body ──────────────────────────────────────────────────── */
+
+.panel__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: start;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Headline ────────────────────────────────────────────────────── */
+
+.headline {
+  font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  /* text-transform: uppercase; */
+}
+
+/* ─── CTA Button ──────────────────────────────────────────────────── */
+
+.cta {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.4rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.panel--dark .cta {
+  background: transparent;
+  border: 2px solid var(--coral);
+  color: var(--coral);
+}
+
+.panel--dark .cta:hover {
+  background: var(--coral);
+  color: var(--purple);
+  transform: translateY(-1px);
+}
+
+.panel--light .cta {
+  background: transparent;
+  border: 2px solid var(--purple);
+  color: var(--purple);
+}
+
+.panel--light .cta:hover {
+  background: var(--purple);
+  color: var(--coral-light);
+  transform: translateY(-1px);
+}
+
+/* ─── Mobile ──────────────────────────────────────────────────────── */
+
+@media (max-width: 680px) {
+  html,
+  body,
+  #root {
+    height: auto;
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  .app {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .panel {
+    padding: 2rem;
+  }
+
+  .panel--light {
+    justify-content: flex-start;
+    padding-top: 3rem;
+  }
+}

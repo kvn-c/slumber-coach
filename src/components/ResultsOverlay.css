@@ -1,0 +1,166 @@
+/* ─── Overlay shell ───────────────────────────────────────────────── */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: ovIn 0.35s ease both;
+}
+
+@keyframes ovIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlay--closing {
+  animation: ovOut 0.32s ease both;
+}
+
+@keyframes ovOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.overlay--bedtime {
+  background: linear-gradient(155deg, var(--purple-mid) 0%, var(--purple) 100%);
+  color: var(--coral);
+}
+
+.overlay--waketime {
+  background: linear-gradient(155deg, var(--coral-light) 0%, var(--coral-dark) 100%);
+  color: var(--purple);
+}
+
+/* ─── Close × ─────────────────────────────────────────────────────── */
+
+.overlay__x {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.5;
+  padding: 0.25rem 0.5rem;
+  transition: opacity 0.15s;
+}
+
+.overlay__x:hover {
+  opacity: 1;
+}
+
+/* ─── Inner content ───────────────────────────────────────────────── */
+
+.overlay__inner {
+  width: min(480px, 88vw);
+  animation: innerIn 0.4s ease 0.05s both;
+}
+
+@keyframes innerIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.overlay__headline {
+  font-size: clamp(1.1rem, 2.8vw, 1.65rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+/* ─── Time cards ──────────────────────────────────────────────────── */
+
+.overlay__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.ocard {
+  border: 2px solid currentColor;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  opacity: 0;
+  animation: cardIn 0.32s ease both;
+  transition: transform 0.15s ease;
+}
+
+.ocard:hover {
+  transform: translateX(5px);
+}
+
+@keyframes cardIn {
+  from {
+    transform: translateX(-14px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Highlighted = most ideal (most sleep cycles) */
+.overlay--bedtime .ocard--fill {
+  background: var(--coral);
+  color: var(--purple);
+  border-color: var(--coral);
+}
+
+.overlay--waketime .ocard--fill {
+  background: var(--purple);
+  color: var(--coral);
+  border-color: var(--purple);
+}
+
+/* ─── Close text button ───────────────────────────────────────────── */
+
+.overlay__close-btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.55;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.15s;
+}
+
+.overlay__close-btn:hover {
+  opacity: 1;
+}

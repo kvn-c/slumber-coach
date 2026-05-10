@@ -1,0 +1,119 @@
+.cs {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--purple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: csIn 0.35s ease both;
+}
+
+.cs--closing {
+  animation: csOut 0.32s ease both;
+}
+
+@keyframes csIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes csOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.cs__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  background: none;
+  border: none;
+  color: var(--coral);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.5;
+  padding: 0.25rem 0.5rem;
+  transition: opacity 0.15s;
+}
+
+.cs__close:hover {
+  opacity: 1;
+}
+
+.cs__stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cs__word-wrap {
+  position: relative;
+}
+
+.cs__word {
+  display: block;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--coral);
+  opacity: 0;
+  will-change: opacity, transform;
+  animation: wordDrift 7s ease-in-out both;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes wordDrift {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  72% {
+    opacity: 0.75;
+    transform: translateY(-7px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.cs__close-btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--coral);
+  cursor: pointer;
+  opacity: 0.55;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.15s;
+}
+
+.cs__close-btn:hover {
+  opacity: 1;
+}
