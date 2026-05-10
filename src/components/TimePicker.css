@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 0.15rem;
+  margin-bottom: 1.5rem;
 }
 
 .tp__unit {
@@ -12,7 +13,7 @@
 }
 
 .tp__digit {
-  font-size: clamp(3.25rem, 6.5vw, 5.25rem);
+  font-size: clamp(2.5rem, 13vw, 4rem);
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -22,12 +23,11 @@
 }
 
 .tp__colon {
-  font-size: clamp(3.25rem, 6.5vw, 5.25rem);
+  font-size: clamp(2.5rem, 13vw, 4rem);
   font-weight: 600;
   line-height: 1;
   color: inherit;
   padding: 0 0.05rem;
-  /* Visually center between digits, accounting for arrow button height */
   margin-top: -0.05em;
 }
 
@@ -67,9 +67,13 @@
   transform: scale(0.9);
 }
 
-@media (max-width: 680px) {
+@media (min-width: 680px) {
+  .tp {
+    margin-bottom: 2.5rem;
+  }
+
   .tp__digit,
   .tp__colon {
-    font-size: 5.5rem;
+    font-size: clamp(3.25rem, 6.5vw, 5.25rem);
   }
 }

@@ -1,16 +1,26 @@
 /* ─── Layout ──────────────────────────────────────────────────────── */
 
+html,
+body,
+#root {
+  height: auto;
+  min-height: 100%;
+  overflow: auto;
+}
+
 .app {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
 }
 
 .panel {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 3rem 5rem;
+  padding: 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -31,14 +41,15 @@
     var(--coral-dark) 100%
   );
   color: var(--purple);
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 3rem;
 }
 
 /* ─── Burger ──────────────────────────────────────────────────────── */
 
 .burger {
   position: fixed;
-  top: 1.5rem;
+  top: 1.9rem;
   right: 1.75rem;
   z-index: 150;
   background: none;
@@ -49,9 +60,9 @@
   padding: 0.4rem;
   line-height: 1;
 }
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 768px) {
   .burger {
-    color: var(--purple);
+    top: 1.5rem;
   }
 }
 
@@ -63,7 +74,6 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: start;
-  gap: 2.5rem;
   position: relative;
   z-index: 1;
 }
@@ -75,7 +85,7 @@
   font-weight: 500;
   letter-spacing: 0.04em;
   line-height: 1.25;
-  /* text-transform: uppercase; */
+  margin-bottom: 1.25rem;
 }
 
 /* ─── CTA Button ──────────────────────────────────────────────────── */
@@ -119,30 +129,36 @@
   transform: translateY(-1px);
 }
 
-/* ─── Mobile ──────────────────────────────────────────────────────── */
+/* ─── Desktop ─────────────────────────────────────────────────────── */
 
-@media (max-width: 680px) {
+@media (min-width: 680px) {
   html,
   body,
   #root {
-    height: auto;
-    min-height: 100%;
-    overflow: auto;
+    height: 100%;
+    overflow: hidden;
   }
 
   .app {
-    flex-direction: column;
-    height: auto;
-    min-height: 100vh;
-    overflow: visible;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .panel {
-    padding: 2rem;
+    padding: 1.5rem 3rem 5rem;
   }
 
   .panel--light {
-    justify-content: flex-start;
-    padding-top: 3rem;
+    justify-content: center;
+    padding-top: 1.5rem;
+  }
+
+  .burger {
+    color: var(--purple);
+  }
+
+  .headline {
+    margin-bottom: 2.5rem;
   }
 }
