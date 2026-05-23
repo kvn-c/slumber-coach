@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { version } from '../version'
 import './About.css'
 
 const SECTIONS = [
@@ -42,6 +43,7 @@ export default function About({ onClose }) {
           <p key={i} className="about__p"><strong>{s.heading} - </strong>{s.body}</p>
         ))}
       </div>
+      <span className="about__version">v{version}</span>
       <button className="about__close-btn" onClick={handleClose}>CLOSE</button>
     </div>
   )
