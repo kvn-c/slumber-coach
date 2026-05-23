@@ -42,8 +42,8 @@ export default function About({ onClose }) {
         {SECTIONS.map((s, i) => (
           <p key={i} className="about__p"><strong>{s.heading} - </strong>{s.body}</p>
         ))}
+        <p className="about__version">v{version}</p>
       </div>
-      <span className="about__version">v{version}</span>
       <button className="about__close-btn" onClick={handleClose}>CLOSE</button>
     </div>
   )
