@@ -17,16 +17,7 @@ registerRoute(
   })
 )
 
-registerRoute(
-  ({ url }) => url.origin === 'https://cdnjs.cloudflare.com',
-  new CacheFirst({
-    cacheName: 'cdn-cache',
-    plugins: [
-      new CacheableResponsePlugin({ statuses: [0, 200] }),
-      new ExpirationPlugin({ maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 }),
-    ],
-  })
-)
+
 
 self.addEventListener('install', () => {
   console.log('[SW] Installing')
