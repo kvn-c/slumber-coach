@@ -9,7 +9,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       manifest: {
         name: 'Slumber — Sleep Cycle Calculator',
-        short_name: 'Slumber',
+        short_name: 'slumber.coach',
         description: 'Calculate your optimal sleep and wake times.',
         theme_color: '#1e1030',
         background_color: '#1e1030',
